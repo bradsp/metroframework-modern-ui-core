@@ -351,16 +351,6 @@ namespace MetroFramework.Controls
 
         #region Routing Fields
 
-        public override ContextMenu ContextMenu
-        {
-            get { return baseTextBox.ContextMenu; }
-            set
-            {
-                ContextMenu = value;
-                baseTextBox.ContextMenu = value;
-            }
-        }
-
         public override ContextMenuStrip ContextMenuStrip
         {
             get { return baseTextBox.ContextMenuStrip; }
@@ -370,6 +360,16 @@ namespace MetroFramework.Controls
                 baseTextBox.ContextMenuStrip = value;
             }
         }
+
+        //public override ContextMenuStrip ContextMenu
+        //{
+        //    get { return baseTextBox.ContextMenuStrip; }
+        //    set
+        //    {
+        //        ContextMenuStrip = value;
+        //        baseTextBox.ContextMenuStrip = value;
+        //    }
+        //}
 
         [DefaultValue(false)]
         public bool Multiline
@@ -539,10 +539,10 @@ namespace MetroFramework.Controls
             base.OnContextMenuStripChanged(e);
         }
 
-        private void BaseTextBoxContextMenuChanged(object sender, EventArgs e)
-        {
-            base.OnContextMenuChanged(e);
-        }
+        //private void BaseTextBoxContextMenuChanged(object sender, EventArgs e)
+        //{
+        //    base.OnContextMenuStripChanged(e);
+        //}
 
         private void BaseTextBoxClientSizeChanged(object sender, EventArgs e)
         {
@@ -831,7 +831,7 @@ namespace MetroFramework.Controls
             baseTextBox.ChangeUICues += BaseTextBoxChangeUiCues;
             baseTextBox.Click += BaseTextBoxClick;
             baseTextBox.ClientSizeChanged += BaseTextBoxClientSizeChanged;
-            baseTextBox.ContextMenuChanged += BaseTextBoxContextMenuChanged;
+            //baseTextBox.ContextMenuChanged += BaseTextBoxContextMenuChanged;
             baseTextBox.ContextMenuStripChanged += BaseTextBoxContextMenuStripChanged;
             baseTextBox.CursorChanged += BaseTextBoxCursorChanged;
 
@@ -877,12 +877,12 @@ namespace MetroFramework.Controls
         }
 
 
-        private void UpdateTextBoxCursor()
+        void UpdateTextBoxCursor()
         {
             baseTextBox.Cursor = base.Cursor;
         }
 
-        private void UpdateBaseTextBox()
+        void UpdateBaseTextBox()
         {
             UpdateTextBoxCursor();       
 
@@ -941,7 +941,7 @@ namespace MetroFramework.Controls
 
         #region PromptedTextBox
 
-        private class PromptedTextBox : TextBox
+        class PromptedTextBox : TextBox
         {
             private const int OCM_COMMAND = 0x2111;
             private const int WM_PAINT = 15;
@@ -1105,7 +1105,7 @@ namespace MetroFramework.Controls
         public delegate void LUClear();
         public event LUClear ClearClicked;
 
-        void lnkClear_Click(object sender, EventArgs e)
+        private void lnkClear_Click(object sender, EventArgs e)
         {
             this.Focus();
             this.Clear();

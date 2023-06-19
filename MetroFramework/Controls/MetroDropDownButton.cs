@@ -62,7 +62,7 @@ namespace MetroFramework.Controls
 
 
         ContextMenuStrip m_SplitMenuStrip;
-        ContextMenu m_SplitMenu;
+        ContextMenuStrip m_SplitMenu;
 
         TextFormatFlags textFormatFlags = TextFormatFlags.Default;
         #endregion
@@ -90,7 +90,7 @@ namespace MetroFramework.Controls
         }
 
         [DefaultValue(null)]
-        public ContextMenu SplitMenu
+        public ContextMenuStrip SplitMenu
         {
             get { return m_SplitMenu; }
             set
@@ -98,14 +98,14 @@ namespace MetroFramework.Controls
                 //remove the event handlers for the old SplitMenu
                 if (m_SplitMenu != null)
                 {
-                    m_SplitMenu.Popup -= SplitMenu_Popup;
+                    m_SplitMenu.Opened -= SplitMenu_Popup;
                 }
 
                 //add the event handlers for the new SplitMenu
                 if (value != null)
                 {
                     ShowSplit = true;
-                    value.Popup += SplitMenu_Popup;
+                    value.Opened += SplitMenu_Popup;
                 }
                 else
                     ShowSplit = false;
