@@ -56,6 +56,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MetroFramework.Design\MetroFramework.Design.csproj" />
     <ProjectReference Include="..\MetroFramework.Fonts\MetroFramework.Fonts.csproj" />
-    <ProjectReference Include="..\MetroFramework\MetroFramework.csproj" />
+    <ProjectReference Include="..\MetroFramework\MetroFrameworkCore.csproj" />
   </ItemGroup>
 </Project>

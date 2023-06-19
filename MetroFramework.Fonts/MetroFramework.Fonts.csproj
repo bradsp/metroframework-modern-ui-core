@@ -21,6 +21,6 @@
     <EmbeddedResource Include="Resources\Open_Sans.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MetroFramework\MetroFramework.csproj" />
+    <ProjectReference Include="..\MetroFramework\MetroFrameworkCore.csproj" />
   </ItemGroup>
 </Project>

@@ -22,6 +22,6 @@
     <Reference Include="System.Design" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MetroFramework\MetroFramework.csproj" />
+    <ProjectReference Include="..\MetroFramework\MetroFrameworkCore.csproj" />
   </ItemGroup>
 </Project>
